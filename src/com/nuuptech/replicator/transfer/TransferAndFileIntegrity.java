@@ -72,8 +72,8 @@ public class TransferAndFileIntegrity implements Runnable {
             + "([01]?\\d\\d?|2[0-4]\\d|25[0-5])$";
     private static final String VALID_IP = "Valid IP: ";
     
-    //private static final String SFTPPASSPROD = "RedHat2014!";
-    private static final String SFTPPASSDRP = "sei2014";
+    //private static final String SFTPPASSPROD = "RedHat2014!"; //host1
+    private static final String SFTPPASSDRP = "sei2014";        //host 2 y 3
     
     //private static final String SFTPPASS = "n0t13n3!";
 
@@ -325,12 +325,10 @@ public class TransferAndFileIntegrity implements Runnable {
                 
                 
                 //Comando que se ejecutará en MAQUINA 2 conectado desde MAQUINA 1
-                //channelExec.setCommand("java -jar /root/pg/dist/Jumps_pg.jar 201.131.40.87 22 root /var/uploads/replicator/postgres/files /var/uploads/replicator/postgres/files/backup_.tar.gz 1 "+job);
-                //channelExec.setCommand("java -jar /root/pg/dist/Jumps_pg.jar 192.168.15.102 22 root /var/uploads/replicator/postgres/files /var/uploads/replicator/postgres/files/backup_.tar.gz 1 "+job);
+                //channelExec.setCommand("java -jar /root/pg/dist/Jumps_pg.jar 10.10.10.98 22 root /var/uploads/replicator/postgres/files /var/uploads/replicator/postgres/files/backup_.tar.gz 1 "+job);                
                 
                 //Comando que se ejecutará en MAQUINA 3 conectado desde MAQUINA 2
-                //channelExec.setCommand("java -jar /root/pg/dist/Jumps_pg.jar 10.10.9.153 22 root /media/Respaldos/postgres/files /var/uploads/replicator/postgres/files/backup_.tar.gz 1 "+job);
-                //channelExec.setCommand("java -jar /root/pg/dist/Jumps_pg.jar 192.168.15.104 22 root /var/uploads/replicator/postgres/files /var/uploads/replicator/postgres/files/backup_.tar.gz 1 "+job);
+                //channelExec.setCommand("java -jar /root/pg/dist/Jumps_pg.jar 10.10.9.153 22 root /media/Respaldos/postgres/files /var/uploads/replicator/postgres/files/backup_.tar.gz 1 "+job);                
                 
                 // Se lista el direcotorio donde se recibe el archivo
                 channelExec.setCommand("ls -la /media/Respaldos/postgres/files");
